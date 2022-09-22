@@ -1,14 +1,32 @@
+
+#PowerShell 配置文件
+#author: ianTang
+#github.com/Tang895
 Set-Alias getlist ls
 Set-Alias cl 'clear'
 Set-Alias py python
+Set-Alias ncpa ncpa.cpl
 Set-PSReadLineOption -PredictionSource History
-#Set-Alias ppip "pip -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com"
-#Set-Alias pr './pr.ps1'
 $mypath="E://ianhome-pc/mypath"
 function nnmap([string]$parm){
 
 	echo $parm
 	nmap $parm -O -sS
+}
+#MD5
+function md5sum([string]$file){
+	echo "MD5计算ing"
+	Get-FileHash $file -Algorithm MD5
+}
+#SHA256
+function sha256sum([string]$file){
+	echo "SHA256计算ing"
+	Get-FileHash $file -Algorithm SHA256 | Format-List
+}
+#SHA1
+function sha1sum([sttng]$file){
+	echo "sha1计算ing"
+	Get-FileHash $file -Algorithm SHA1
 }
 
 function ppip([string]$mod,[string]$r){
