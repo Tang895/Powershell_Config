@@ -28,7 +28,17 @@ function sha1sum([sttng]$file){
 	echo "sha1计算ing"
 	Get-FileHash $file -Algorithm SHA1
 }
-
+#虚拟显示器
+function vson(){
+	echo "激活虚拟显示器";
+	echo "vson表示激活，vsoff表示取消激活";
+	deviceinstaller64 enableidd 1;
+}
+function vsoff(){
+	echo "取消激活虚拟显示器";
+	echo "vson表示激活，vsoff表示取消激活";
+	deviceinstaller64 enableidd 0;
+}
 function ppip([string]$mod,[string]$r){
 		echo $parm
 		echo "pip 临时换源安装ing"
