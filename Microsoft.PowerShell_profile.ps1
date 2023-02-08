@@ -5,9 +5,13 @@
 Set-Alias getlist ls
 Set-Alias cl 'clear'
 Set-Alias py python
+Set-Alias whatis tldr
 Set-Alias ncpa ncpa.cpl
 Set-PSReadLineOption -PredictionSource History
+
 $mypath="E://ianhome-pc/mypath"
+$mypath_laptop = "C:\Users\ian\ianhome\mypath"
+
 function nnmap([string]$parm){
 
 	echo $parm
